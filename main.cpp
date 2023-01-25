@@ -45,13 +45,12 @@ int main()
             char humanChoice = toupper(str.at(0));
             srand(time(0));
             char computerChoice = computerMove();
-            /*if(test.find(humanChoice) == -1)
+            if(!(humanChoice=='S' || humanChoice=='G' || humanChoice=='W'))
             {
                 cout<<"Wrong choice entered!\n";
                 cout<<"Enter \'S\', \'G\' or \'W\' only.\n";
-                continue;
-            }*/
-            if((humanChoice=='S'&&computerChoice=='G')||(humanChoice=='W'&&computerChoice=='S')||(humanChoice=='G'&&computerChoice=='W'))
+            }
+            else if((humanChoice=='S'&&computerChoice=='G')||(humanChoice=='W'&&computerChoice=='S')||(humanChoice=='G'&&computerChoice=='W'))
             {
                 cout<<("Computer wins !");
                 computer++;
@@ -70,7 +69,7 @@ int main()
             if(again == 'Y') system("cls");
         }while(again=='Y');
 
-        cout<<("\n\nFinal Score - ");
+        cout<<("\n\nFinal Score :-");
         cout<<"\nHuman : "<<human;
         cout<<"\nComputer : "<<computer<<"\n\n";
         cout<<( (human>computer?"Congratulations!! Human wins the game.":(human==computer?"Match tied!!":"You lost! Better luck next time.")) );
